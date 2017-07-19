@@ -1,5 +1,6 @@
 import algorithmChallenges.*;
 import textBased.*;
+import generalChallenges.*;
 
 public class RunProjects {
     // select which algorithm(s) to run
@@ -23,5 +24,14 @@ public class RunProjects {
         boolean pString = stringy.checkIfPalindrome(stringyHelp.getUserInput(
                 "Please enter a string to check if palindrome: "));
         System.out.println(pString);
+
+        System.out.println();
+
+        // print out first most frequent integer in an array
+        int[] thisIsOnlyATest = {2, 3, 5, 7, 5, 7, 3, 5, 6, 8, 5, 8, 1, 5};
+        ArrayManipulation arrayMan = new ArrayManipulation();
+        int intty = arrayMan.firstMostFrequentInt(thisIsOnlyATest);
+        System.out.println(intty);
     }
+    // outside main
 }
