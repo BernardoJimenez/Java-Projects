@@ -1,6 +1,7 @@
 import algorithmChallenges.*;
 import textBased.*;
 import generalChallenges.*;
+import java.util.*;
 
 public class RunProjects {
     // select which algorithm(s) to run
@@ -28,10 +29,23 @@ public class RunProjects {
         System.out.println();
 
         // print out first most frequent integer in an array
-        int[] thisIsOnlyATest = {2, 3, 5, 7, 5, 7, 3, 5, 6, 8, 5, 8, 1, 5};
+        int[] mostFreqTest = {2, 3, 5, 7, 5, 7, 3, 5, 6, 8, 5, 8, 1, 5};
         ArrayManipulation arrayMan = new ArrayManipulation();
-        int intty = arrayMan.firstMostFrequentInt(thisIsOnlyATest);
-        System.out.println(intty);
+        int mostFreq = arrayMan.firstMostFrequentInt(mostFreqTest);
+        System.out.println(mostFreq + " is the most frequent integer.");
+
+        System.out.println();
+
+        int[] pairsArrayTest = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        int[][] pairedTenNums = arrayMan.pairsThatMake10(pairsArrayTest);
+        for (int[] arr : pairedTenNums) {
+            System.out.println(arr[0]);
+            System.out.println(arr[1]);
+            boolean tenTest = (arr[0] + arr[1] == 10);
+            System.out.println(tenTest);
+        }
+
+        //
     }
     // outside main
 }

@@ -5,6 +5,10 @@ import java.util.Arrays;
 public class StringManipulation {
 
     public String reverseString(String originalString) {
+        /**
+        * Input: a String
+        * Output: the same string in reverse order
+        */
         char[] originalArray = originalString.toCharArray();
         // make character array out of original String
         char[] reversedArray = new char[originalArray.length];
@@ -12,13 +16,6 @@ public class StringManipulation {
 
         int reversedIndex;
         int normalIndex = 0;
-
-        /*
-        for (char character: originalArray) {
-            reversedArray[reversedIndex] = character;
-            reversedIndex++;
-        }
-        */
 
         for (reversedIndex = (originalArray.length - 1); reversedIndex != -1; reversedIndex--) {
             reversedArray[normalIndex] = originalArray[reversedIndex];
@@ -29,10 +26,11 @@ public class StringManipulation {
     }
 
     public boolean checkIfPalindrome(String userString) {
+        /**
+         * Input: a String
+         * Output: boolean indicating whether the string is the same in reverse order
+         */
         String reversedString = reverseString(userString);
-        // reverse user String, store it
-        // System.out.println(userString);
-        // System.out.println(reversedString);
         return userString.equals(reversedString);
         // return true or false
     }
