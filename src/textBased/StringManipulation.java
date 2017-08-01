@@ -1,7 +1,5 @@
 package textBased;
 
-import java.util.Arrays;
-
 public class StringManipulation {
 
     public String reverseString(String originalString) {
@@ -24,6 +22,7 @@ public class StringManipulation {
         String reversedString = new String(reversedArray);
         return reversedString;
     }
+
 
     public boolean checkIfPalindrome(String userString) {
         /**

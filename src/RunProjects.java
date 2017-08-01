@@ -1,7 +1,7 @@
 import algorithmChallenges.*;
 import textBased.*;
 import generalChallenges.*;
-import java.util.*;
+import sortingAlgorithms.*;
 
 public class RunProjects {
     // select which algorithm(s) to run
@@ -45,7 +45,16 @@ public class RunProjects {
             System.out.println(tenTest);
         }
 
-        //
+        System.out.println();
+
+        int[] testBubble = {2, 3, 1, 7, 4, 9, 0, 3, 5};
+        Sort sortty = new Sort();
+        sortty.bubble(testBubble);
+        for (int bub : testBubble) {
+            System.out.print(bub + " ");
+        }
+
+     // end of main
     }
     // outside main
 }

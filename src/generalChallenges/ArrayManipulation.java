@@ -35,6 +35,8 @@ public class ArrayManipulation {
     public int[][] pairsThatMake10(int[] userArray) {
         /*
         * Find pairs in an integer array whose sum is equal to 10
+        * returns a 2D array where each position is an array containing
+        * two numbers summing up to 10
         */
         ArrayList<Integer> answers = new ArrayList<Integer>();
 
@@ -53,7 +55,7 @@ public class ArrayManipulation {
     public int[][] pairsHelper(ArrayList<Integer> userList) {
         /*
         * Input: an ArrayLit of numbers
-        * Output: a 2D array with each position an array of the next two numbers
+        * Output: a 2D array with each position an array of the next two numbers in userList
          */
         ArrayList<Integer> evens = new ArrayList<>();
         ArrayList<Integer> odds = new ArrayList<>();
