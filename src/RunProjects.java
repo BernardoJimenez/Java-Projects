@@ -2,6 +2,7 @@ import algorithmChallenges.*;
 import textBased.*;
 import generalChallenges.*;
 import sortingAlgorithms.*;
+import java.util.*;
 
 public class RunProjects {
     // select which algorithm(s) to run
@@ -53,6 +54,19 @@ public class RunProjects {
         for (int bub : testBubble) {
             System.out.print(bub + " ");
         }
+
+        System.out.println();
+
+        LinkedListManipulation linkMan = new LinkedListManipulation();
+        LinkedList findNLink = new LinkedList();
+        findNLink.add(1);
+        findNLink.add(13);
+        findNLink.add(41);
+        findNLink.add(2);
+        findNLink.add(8);
+        findNLink.add(192);
+        System.out.println(linkMan.findNthInLinked(findNLink, 3));
+
 
      // end of main
     }
