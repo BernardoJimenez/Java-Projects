@@ -3,6 +3,7 @@ import textBased.*;
 import generalChallenges.*;
 import sortingAlgorithms.*;
 import java.util.*;
+import mathBased.*;
 
 public class RunProjects {
     // select which algorithm(s) to run
@@ -37,6 +38,7 @@ public class RunProjects {
 
         System.out.println();
 
+        // find pairs of ints in an array equaling 10
         int[] pairsArrayTest = {1, 2, 3, 4, 5, 6, 7, 8, 9};
         int[][] pairedTenNums = arrayMan.pairsThatMake10(pairsArrayTest);
         for (int[] arr : pairedTenNums) {
@@ -48,6 +50,7 @@ public class RunProjects {
 
         System.out.println();
 
+        // bubble sort an array of ints
         int[] testBubble = {2, 3, 1, 7, 4, 9, 0, 3, 5};
         Sort sortty = new Sort();
         sortty.bubble(testBubble);
@@ -55,17 +58,69 @@ public class RunProjects {
             System.out.print(bub + " ");
         }
 
-        System.out.println();
+        System.out.println( );
 
+        // find the Nth object in a LinkedList
         LinkedListManipulation linkMan = new LinkedListManipulation();
         LinkedList findNLink = new LinkedList();
-        findNLink.add(1);
+        findNLink.add(1.5);
         findNLink.add(13);
-        findNLink.add(41);
-        findNLink.add(2);
+        findNLink.add("dog");
+        findNLink.add(200.9);
         findNLink.add(8);
-        findNLink.add(192);
+        findNLink.add("cat");
+        // Note: does not retain object class, must cast returned object
         System.out.println(linkMan.findNthInLinked(findNLink, 3));
+
+        System.out.println();
+
+        // Sort an array of strings
+        String[] animals = new String[]{"Cat", "Dog", "Hippo", "Lizard", "Owl"};
+        // sort alphabetically
+        Arrays.sort(animals);
+        int sortAnimalsInt = 1;
+        for (String animal : animals) {
+            System.out.println("Animal " + sortAnimalsInt + " is " + animal);
+            sortAnimalsInt++;
+        }
+
+        System.out.println();
+
+        // Sort an ArrayList of Strings
+        List<String> fruits = new ArrayList<>();
+        fruits.add("Pineapple");
+        fruits.add("Apple");
+        fruits.add("Orange");
+        fruits.add("Tomato");
+        // sort alphabetically
+        Collections.sort(fruits);
+        int sortFruitInt = 1;
+        for (String fruit : fruits) {
+            System.out.println("Fruit " + sortFruitInt + " is " + fruit);
+            sortFruitInt++;
+        }
+
+        System.out.println();
+
+        // Implement square root from scratch
+        System.out.println(MyMath.mySqrt(4));
+        System.out.println(MyMath.mySqrt(36));
+        System.out.println(MyMath.mySqrt(144));
+        System.out.println(MyMath.mySqrt(84));
+        System.out.println(MyMath.mySqrt(1));
+        // known bugs: negative number should put into infinte loop
+        // bad runtime
+
+        System.out.println();
+
+        // Implement multiplication
+        System.out.println(MyMath.myMultiply(3, 8));
+        System.out.println(MyMath.myMultiply(34, 7));
+        System.out.println(MyMath.myMultiply(2, 0));
+        System.out.println(MyMath.myMultiply(0, 3));
+        System.out.println(MyMath.myMultiply(1, 100));
+        // does not correctly output with negatives
+
 
 
      // end of main

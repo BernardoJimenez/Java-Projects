@@ -3,12 +3,11 @@ import java.util.*;
 
 public class LinkedListManipulation {
 
-    public int findNthInLinked(LinkedList linky, int n) {
-
+    public Object findNthInLinked(LinkedList linky, int n) {
+        // make an equivalent array
         Object[] answer = linky.toArray();
-
-        return (int) answer[n-1];
-
+        // return int casted Object at index n-1
+        return answer[n-1];
     }
 
 }
