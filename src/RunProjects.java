@@ -10,14 +10,12 @@ public class RunProjects {
     public static void main(String[] args) {
 
         // Collatz's Conjecture
-        CollatzConjecture cc = new CollatzConjecture();
-        cc.solveCollatz();
+        CollatzConjecture.solveCollatz();
 
         System.out.println();
 
         // Fizz Buzz
-        FizzBuzz fb = new FizzBuzz();
-        fb.printFizzBuzz();
+        FizzBuzz.printFizzBuzz();
 
         System.out.println();
 
@@ -121,7 +119,10 @@ public class RunProjects {
         System.out.println(MyMath.myMultiply(1, 100));
         // does not correctly output with negatives
 
+        System.out.println();
 
+        // Print Fibonacci sequence
+        FibonacciSequence.printFibonacci(25);
 
      // end of main
     }

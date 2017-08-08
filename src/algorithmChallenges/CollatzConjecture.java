@@ -4,11 +4,11 @@ public class CollatzConjecture {
     // Start with a number randNumCC > 1. Find the number of steps it takes to reach one using the following process:
     // If randNumCC is even, divide it by 2. If randNumCC is odd, multiply it by 3 and add 1.
 
-    private int randNumCC = (int) ((Math.random() * 999) + 2);
+    private static int randNumCC = (int) ((Math.random() * 999) + 2);
     // pick a random integer between 2 and 1000
-    private int orginalCCNum = randNumCC;
+    private static int orginalCCNum = randNumCC;
 
-    public final void solveCollatz() {
+    public static final void solveCollatz() {
         System.out.println("N is equal to " + orginalCCNum);
 
         int steps = 0;

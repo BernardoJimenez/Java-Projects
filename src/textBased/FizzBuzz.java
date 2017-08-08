@@ -5,10 +5,10 @@ public class FizzBuzz {
     // instead of the number and for the multiples of five print “Buzz”. For fbNumbers which are multiples of
     // both three and five print “FizzBuzz”
 
-    private int[] fbNumbers = new int[100];
-    private int realNum = 1;
+    private static int[] fbNumbers = new int[100];
+    private static int realNum = 1;
 
-    public void printFizzBuzz() {
+    public static void printFizzBuzz() {
         while (realNum < 101) {
             // fill the array with fbNumbers 1 to 100
             if (((realNum % 3) == 0) || ((realNum % 5) == 0)) {

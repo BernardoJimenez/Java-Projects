@@ -24,6 +24,7 @@ public class StringManipulation {
     }
 
 
+
     public boolean checkIfPalindrome(String userString) {
         /**
          * Input: a String
