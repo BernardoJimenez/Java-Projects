@@ -48,10 +48,9 @@ public class RunProjects {
 
         System.out.println();
 
-        // bubble sort an array of ints
+        // sort sort an array of ints
         int[] testBubble = {2, 3, 1, 7, 4, 9, 0, 3, 5};
-        Sort sortty = new Sort();
-        sortty.bubble(testBubble);
+        BubbleSort.sort(testBubble);
         for (int bub : testBubble) {
             System.out.print(bub + " ");
         }
@@ -72,7 +71,7 @@ public class RunProjects {
 
         System.out.println();
 
-        // Sort an array of strings
+        // BubbleSort an array of strings
         String[] animals = new String[]{"Cat", "Dog", "Hippo", "Lizard", "Owl"};
         // sort alphabetically
         Arrays.sort(animals);
@@ -84,7 +83,7 @@ public class RunProjects {
 
         System.out.println();
 
-        // Sort an ArrayList of Strings
+        // BubbleSort an ArrayList of Strings
         List<String> fruits = new ArrayList<>();
         fruits.add("Pineapple");
         fruits.add("Apple");
@@ -123,6 +122,7 @@ public class RunProjects {
 
         // Print Fibonacci sequence
         FibonacciSequence.printFibonacci(25);
+
 
      // end of main
     }

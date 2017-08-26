@@ -1,9 +1,9 @@
 package sortingAlgorithms;
 
-public class Sort {
+public class BubbleSort {
 
-    public void bubble(int[] userArray) {
-        // Bubble Sort
+    public static void sort(int[] userArray) {
+        // Bubble BubbleSort
         int userLength = userArray.length;
         int tempy = 0;
 
@@ -23,9 +23,6 @@ public class Sort {
                 }
             }
         }
-
     }
-
-
-
+    
 }
