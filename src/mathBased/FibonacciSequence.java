@@ -8,7 +8,7 @@ public class FibonacciSequence {
 
     public static void printFibonacci(int sequenceLength) {
         // Print Fibonacci sequence N number of positions
-        while (sequenceLength != 0) {
+        while (sequenceLength != 0){
             if (cycles < 2) {
                 System.out.println(lastTwo[cycles]);
                 cycles++;
