@@ -1,5 +1,5 @@
 package mathBased;
-
+import java.util.Random;
 
 public class MyMath {
 
@@ -15,6 +15,7 @@ public class MyMath {
         while ((answer - (tempy/answer)) != 0) {
             answer = ((tempy/answer) + answer) / 2.0;
         }
+
         return answer;
     }
 
@@ -42,5 +43,16 @@ public class MyMath {
     }
 
 
+    // Given a function rand5() that returns a
+    // random int between 0 and 5, implement rand7()
+    public static int rand5(){
+        Random rand5 = new Random();
+        return rand5.nextInt(6);
+    }
+
+    public static int rand7(){
+        return rand5() + (rand5() / 2);
+        // is it that easy?
+    }
 
 }

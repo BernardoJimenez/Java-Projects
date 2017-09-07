@@ -51,4 +51,37 @@ public class MergeSort {
         // TODO: Finish lol
     }
 
+
+
+    // Let's start with an easier but related question I've seen out in the wild:
+    // Given two sorted arrays, combine them into one sorted array...
+    public static void main(String args[]){
+        int[] arr1 = {1, 2, 2, 3, 12, 30, 88, 99, 11351};
+        int[] arr2 = {-100, 0, 2, 4, 29, 31, 45, 67, 100, 538764};
+        int[] answer = new int[arr1.length + arr2.length];
+
+        int index1 = 0;
+        int index2 = 0;
+        int newIndex = 0;
+
+        while (index1 < arr1.length | index2 < arr2.length){
+            if (index2 >= arr2.length ||
+                    (index1 < arr1.length && (arr1[index1] <= arr2[index2]))){
+                // boi that is a wild logic statement
+                answer[newIndex] = arr1[index1];
+                newIndex++;
+                index1++;
+            } else {
+                answer[newIndex] = arr2[index2];
+                newIndex++;
+                index2++;
+            }
+        }
+
+        for (int i : answer){
+            System.out.print(i + " ");
+        }
+     //
+    }
+
 }

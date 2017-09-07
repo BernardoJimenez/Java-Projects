@@ -39,6 +39,37 @@ public class HashTableDemo {
 
         pets.clear();
 
-    // end main
+        System.out.println();
+        // end
+
+
+        // GIVEN A STRING OF CHARACTERS, WALK THRU AND CALCULATE THE FREQUENCY OF EACH LETTER:
+        String inputStr = "abcdeffgggghhiiiiijjkkllllmmmnnoopqrrrrrstvwwxxxxxxxxxxyyzzzzzzzzzzzz";
+        Hashtable<Character, Integer> answer = new Hashtable(26); // can't use primitives
+        char[] inputArr = inputStr.toCharArray();
+        int counter = 0;
+
+        for (int i = 0; i < inputArr.length; i++){
+            char current = inputArr[i];
+            counter++;
+
+            if (((i + 1) == inputArr.length) || inputArr[i + 1] != inputArr[i]){
+                answer.put(current, counter);
+                counter = 0;
+            }
+
+        }
+
+        Enumeration answerKeys = answer.keys();
+        Enumeration answerValues = answer.elements();
+
+        while (answerKeys.hasMoreElements()){
+            System.out.println("(" + answerKeys.nextElement() +
+                    ", " + answerValues.nextElement() + ")");
+        }
+        // "bugs" present in the above program:
+        // Does not print in alphabetical order, possibly due to Enumeration
+        // Does not acknowledge letters with zero instances in the String
+        // not modular
     }
 }
