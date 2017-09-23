@@ -63,6 +63,7 @@ public class HashTableDemo {
         Enumeration answerKeys = answer.keys();
         Enumeration answerValues = answer.elements();
 
+
         while (answerKeys.hasMoreElements()){
             System.out.println("(" + answerKeys.nextElement() +
                     ", " + answerValues.nextElement() + ")");

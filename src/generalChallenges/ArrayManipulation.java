@@ -1,6 +1,7 @@
 package generalChallenges;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ArrayManipulation {
 
@@ -54,7 +55,7 @@ public class ArrayManipulation {
 
     public int[][] pairsHelper(ArrayList<Integer> userList) {
         /*
-        * Input: an ArrayLit of numbers
+        * Input: an ArrayList of numbers
         * Output: a 2D array with each position an array of the next two numbers in userList
          */
         ArrayList<Integer> evens = new ArrayList<>();
@@ -81,4 +82,93 @@ public class ArrayManipulation {
         return answers;
     }
 
+
+    /*
+    remove duplicates from a sorted array of ints
+     */
+    public List<Integer> removeDuplicatesFromSorted(int[] numbers){
+        List<Integer> solution = new ArrayList<>();
+        solution.add(numbers[0]);
+
+        for (int i = 1; i < numbers.length - 1; i++){
+            if (numbers[i] != numbers[i-1]){
+                solution.add(numbers[i]);
+            }
+        }
+        return solution;
+    }
+
+
+    /*
+    allow at most 2 duplicates
+     */
+    public List<Integer> leaveOneDuplicate(int[] numbers){
+        List<Integer> solution = new ArrayList<>();
+
+        for (int i = 0; i < numbers.length - 2; i++) {
+            if (i == numbers.length - 3) {
+                if ((numbers[i] == numbers[i + 1]) ||
+                        (numbers[i + 1] == numbers[i + 2]) ||
+                        (numbers[i] != numbers[i+1] && numbers[i+1] != numbers[i + 2])){
+                    solution.add(numbers[i]);
+                    i++;
+                    solution.add(numbers[i]);
+                    i++;
+                    if (numbers[i] != numbers[i-1]) {
+                        solution.add(numbers[i]);
+                    }
+                }
+            } else if (numbers[i] != numbers[i + 2]) {
+                    solution.add(numbers[i]);
+                }
+        }
+        // BLESS THIS MESS
+        return solution;
+    }
+
+    /*
+    move all zeros in an array to the end
+     */
+    public void moveZeros(int[] numbers){
+        int noneZeros = 0;
+
+        for (int num : numbers){
+            if (num != 0){
+                numbers[noneZeros] = num;
+                noneZeros++;
+            }
+        }
+
+        for (int z = noneZeros; z < numbers.length; z++){
+            numbers[z] = 0;
+        }
+    }
+
+
+    // MAIN
+    public static void main(String[] args){
+        ArrayManipulation man = new ArrayManipulation();
+
+        int[] example = {1, 1, 1, 1, 2, 3, 3, 3, 4, 5, 5, 5, 6, 7, 8, 8, 9, 9, 9};
+
+        for (Integer num : man.leaveOneDuplicate(example)){
+            System.out.print(num + " ");
+        }
+
+        System.out.println();
+
+        for (Integer num : man.removeDuplicatesFromSorted(example)){
+            System.out.print(num + " ");
+        }
+
+        System.out.println();
+
+        int[] zeroTest = {1, 2, 0, 7, 0, 0, 4, 0, 0};
+        man.moveZeros(zeroTest);
+        for (int i : zeroTest){
+            System.out.print(i + " ");
+        }
+
+        System.out.println();
+    }
 }

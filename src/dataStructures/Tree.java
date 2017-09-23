@@ -3,9 +3,7 @@ import java.io.*;
 import java.util.*;
 
 public class Tree {
-
     private Node root; // first Node
-
     public Tree(){
         root = null;
     }
