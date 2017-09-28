@@ -55,4 +55,38 @@ public class MyMath {
         // is it that easy?
     }
 
+
+    /*
+    return whether number is a power of n
+     */
+    public void powerOfChecker(int n, int number){
+        double dNum = number;
+        // have number as a double to represent decimal values
+        boolean answer = true;
+
+        while(dNum != n){
+            dNum = dNum / n;
+            // continuously divide dNum by power: n
+            if (dNum != ((int) dNum)){
+                // if dNum is now not a whole number
+                answer = false;
+                break;
+            }
+        }
+
+        if (answer){
+            System.out.println(number + " is a power of " + n);
+        } else {
+            System.out.println(number + " is NOT a power of " + n);
+        }
+    }
+
+
+    // MAIN
+    public static void main(String[] args){
+        MyMath math = new MyMath();
+
+        math.powerOfChecker(2, 17);
+        math.powerOfChecker(2, 64);
+    }
 }

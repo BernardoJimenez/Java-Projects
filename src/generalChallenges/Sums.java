@@ -121,5 +121,7 @@ public class Sums {
         System.out.println(summy.solSize(example, 12));
         System.out.println(summy.solSize(example, 3));
         System.out.println(summy.solSize(example, 280));
+
+
     }
 }
