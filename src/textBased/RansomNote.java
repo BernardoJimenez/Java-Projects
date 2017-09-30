@@ -39,6 +39,7 @@ public class RansomNote {
         }
     }
 
+
     public boolean checkIfLegit(){
         for (Map.Entry<String, Integer> entry :
                 noteMap.entrySet()){

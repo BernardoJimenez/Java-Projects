@@ -177,5 +177,49 @@ public class Tree {
             System.out.print(localRoot.NData + " ");
         }
     }
+
+
+    private void invertHelper(Node root){
+        Node tempy = root.leftChild;
+        root.leftChild = root.rightChild;
+        root.rightChild = tempy;
+
+        if (root.leftChild != null){
+            invertHelper(root.leftChild);
+        }
+        if (root.rightChild != null){
+            invertHelper(root.rightChild);
+        }
+    }
+
+
+    public void invertBST(Node root){
+        if (root == null){
+            return;
+        } else{
+            invertHelper(root);
+        }
+    }
+
+
+    private boolean checkIfBalancedHelper(Node left, Node right){
+        if (right == null && left == null){
+            return true;
+        } else if (right == null || left == null){
+            return false;
+        }
+
+        return (checkIfBalancedHelper(left.leftChild, right.rightChild) && // outer
+                checkIfBalancedHelper(left.rightChild, right.leftChild));  // inner
+    }
+
+
+    public boolean checkIfBalaned(Node root){
+        if (root == null){
+            return true;
+        } else {
+            return checkIfBalancedHelper(root.leftChild, root.rightChild);
+        }
+    }
     //
 }

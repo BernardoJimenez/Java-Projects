@@ -82,6 +82,32 @@ public class MyMath {
     }
 
 
+    public void checkIfPrime(int number) {
+        boolean isPrime = true;
+
+        // check if 2 divides number cleanly
+        // 2 is the only even Prime
+        if (number < 2 || number % 2 == 0) {
+            // if no remainder
+            isPrime = false;
+        } else {
+            // otherwise, divide by odd numbers
+            for (int i = 3; i <= number / 2; i += 2) {
+                // any i higher than half of number for sure will not
+                // divide number cleanly
+                if (number % i < 1) {
+                    isPrime = false;
+                }
+            }
+        }
+        if (isPrime) {
+            System.out.println("Prime");
+        } else {
+            System.out.println("Not prime");
+        }
+    }
+
+
     // MAIN
     public static void main(String[] args){
         MyMath math = new MyMath();

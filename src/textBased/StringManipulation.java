@@ -1,4 +1,6 @@
 package textBased;
+import java.util.*;
+import java.lang.*;
 
 public class StringManipulation {
 
@@ -7,22 +9,9 @@ public class StringManipulation {
         * Input: a String
         * Output: the same string in reverse order
         */
-        char[] originalArray = originalString.toCharArray();
-        // make character array out of original String
-        char[] reversedArray = new char[originalArray.length];
-        // make a new array the same size as the original
-
-        int reversedIndex;
-        int normalIndex = 0;
-
-        for (reversedIndex = (originalArray.length - 1); reversedIndex != -1; reversedIndex--) {
-            reversedArray[normalIndex] = originalArray[reversedIndex];
-            normalIndex++;
-        }
-        String reversedString = new String(reversedArray);
-        return reversedString;
+        // ONE LINE
+        return new StringBuilder(originalString).reverse().toString();
     }
-
 
 
     public boolean checkIfPalindrome(String userString) {
@@ -35,5 +24,46 @@ public class StringManipulation {
         // return true or false
     }
 
+    /*
+    calculate number of swaps needed to make the two strings anagrams of each other
+     */
+    public int numberOfSwapsNeeded(String first, String second){
+        int[] letterCounts = new int[26]; // array of zeroes
+        // indices represent letter in the alphabet
+        int swapsNeeded = 0;
 
+        for (char c : first.toCharArray()){
+            letterCounts[c - 'a']++; // to that index
+            // calculates to a number between 0 and 25
+        }
+
+        for (char c : second.toCharArray()){
+            letterCounts[c - 'a']--; // subtract from that index
+        }
+
+        char letter = 'a';
+
+        for (int count : letterCounts){
+            if (count != 0) {
+                System.out.println(letter + " is swapped " + Math.abs(count) + " time(s).");
+            }
+            swapsNeeded += Math.abs(count);
+            letter++;
+        }
+        return swapsNeeded;
+    }
+
+
+    // MAIN
+    public static void main(String[] args){
+        StringManipulation manny = new StringManipulation();
+
+        System.out.println(manny.checkIfPalindrome("dog"));
+        System.out.println(manny.checkIfPalindrome("racecar") + "\n");
+
+        System.out.println("Original: abcdef, Reversed: " + manny.reverseString("abcdef") + "\n");
+
+        System.out.println(manny.numberOfSwapsNeeded("ccbbcca", "aaaacbb"));
+
+    }
 }
