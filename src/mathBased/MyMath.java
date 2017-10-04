@@ -15,7 +15,6 @@ public class MyMath {
         while ((answer - (tempy/answer)) != 0) {
             answer = ((tempy/answer) + answer) / 2.0;
         }
-
         return answer;
     }
 
@@ -59,22 +58,60 @@ public class MyMath {
     /*
     return whether number is a power of n
      */
-    public void powerOfChecker(int n, int number){
+    public void powerOfChecker(int n, int number) {
         double dNum = number;
         // have number as a double to represent decimal values
-        boolean answer = true;
+        boolean isAPower = true;
 
-        while(dNum != n){
-            dNum = dNum / n;
-            // continuously divide dNum by power: n
-            if (dNum != ((int) dNum)){
-                // if dNum is now not a whole number
-                answer = false;
-                break;
+        if (number == 1){
+            // n^0 = 1 always
+            isAPower = true;
+        } else if (number == 0) {
+            isAPower = false;
+        } else {
+            while (dNum != n) {
+                dNum /= n;
+                // continuously divide dNum by power: n
+                if (dNum != ((int) dNum)) {
+                    // if dNum is now not a whole number
+                    isAPower = false;
+                    break;
+                }
             }
         }
 
-        if (answer){
+        if (isAPower){
+            System.out.println(number + " is a power of " + n);
+        } else {
+            System.out.println(number + " is NOT a power of " + n);
+        }
+    }
+
+
+    /*
+    return whether if decimal value is a power of n
+     */
+    public void powerOfChecker(int n, double number){
+        // yay polymorphism
+        double dNum = number;
+        boolean isAPower = false;
+
+        if (number == 0){
+            isAPower = false;
+        } else if (number == 1.0){
+            isAPower = true;
+        } else {
+            while (dNum < n) {
+                dNum *= n;
+                // continuously divide dNum by power: n
+                if (dNum == n) {
+                    isAPower = true;
+                    break;
+                }
+            }
+        }
+
+        if (isAPower){
             System.out.println(number + " is a power of " + n);
         } else {
             System.out.println(number + " is NOT a power of " + n);
@@ -83,27 +120,30 @@ public class MyMath {
 
 
     public void checkIfPrime(int number) {
+        int num = number;
         boolean isPrime = true;
 
         // check if 2 divides number cleanly
         // 2 is the only even Prime
-        if (number < 2 || number % 2 == 0) {
+        if (num < 2 ||
+                (num % 2 == 0 && num != 2)) {
             // if no remainder
+            // and not even, except for 2
             isPrime = false;
         } else {
             // otherwise, divide by odd numbers
-            for (int i = 3; i <= number / 2; i += 2) {
+            for (int i = 3; i <= num / 2; i += 2) {
                 // any i higher than half of number for sure will not
                 // divide number cleanly
-                if (number % i < 1) {
+                if (num % i < 1) {
                     isPrime = false;
                 }
             }
         }
         if (isPrime) {
-            System.out.println("Prime");
+            System.out.println(number + " is Prime.");
         } else {
-            System.out.println("Not prime");
+            System.out.println(number + " is NOT prime.");
         }
     }
 
@@ -114,5 +154,17 @@ public class MyMath {
 
         math.powerOfChecker(2, 17);
         math.powerOfChecker(2, 64);
+        math.powerOfChecker(3, 0);
+        math.powerOfChecker(2, 0.125);
+        math.powerOfChecker(7, 0.5425);
+        math.powerOfChecker(100, 1.0);
+
+        System.out.println();
+        math.checkIfPrime(0);
+        math.checkIfPrime(1);
+        math.checkIfPrime(5);
+        math.checkIfPrime(2);
+        math.checkIfPrime(11);
+        math.checkIfPrime(129);
     }
 }
