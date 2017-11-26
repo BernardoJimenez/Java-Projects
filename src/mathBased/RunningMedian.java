@@ -37,7 +37,7 @@ public class RunningMedian {
     private static void rebalance(PriorityQueue<Integer> lowerNumbers, PriorityQueue<Integer> higherNumbers){
         PriorityQueue<Integer> biggerHeap =
                 lowerNumbers.size() > higherNumbers.size() ? lowerNumbers : higherNumbers;
-        PriorityQueue smallerHeap =
+        PriorityQueue<Integer> smallerHeap =
                 lowerNumbers == biggerHeap ? higherNumbers : lowerNumbers;
 
         if (biggerHeap.size() - smallerHeap.size() > 1){

@@ -221,5 +221,115 @@ public class Tree {
             return checkIfBalancedHelper(root.leftChild, root.rightChild);
         }
     }
+
+    public boolean checkIfBST(Node root){
+        return checkIfBSTHelper(root, Integer.MIN_VALUE, Integer.MIN_VALUE);
+    }
+
+    private boolean checkIfBSTHelper(Node node, int min, int max){
+        if (node == null){
+            // all nodes meet properties of BST up to leaf node
+            return true;
+        }
+
+        // check that properties of BST still met
+        return (min < node.NData && node.NData < max) &&
+                checkIfBSTHelper(node.leftChild, min, node.NData) &&
+                checkIfBSTHelper(node.rightChild, node.NData, max);
+    }
+
+    public ArrayList<Node> inOrderArrayList(Node root, ArrayList<Node> nodes){
+        if (root != null){
+            inOrderArrayList(root.leftChild, nodes);
+            nodes.add(root);
+            inOrderArrayList(root.rightChild, nodes);
+        }
+        return nodes;
+    }
+
+    public ArrayList<Node> postOrderArrayList(Node root, ArrayList<Node> nodes){
+        if (root != null){
+            postOrderArrayList(root.leftChild, nodes);
+            postOrderArrayList(root.rightChild, nodes);
+            nodes.add(root);
+        }
+        return nodes;
+    }
+
+    public Node lowestCommonAncestor(Node root, Node a, Node b){
+        List<Node> inOrder = inOrderArrayList(root, new ArrayList<Node>());
+        List<Node> postOrder = postOrderArrayList(root, new ArrayList<Node>());
+        List<Node> subset = inOrder.subList(inOrder.indexOf(a)-1, inOrder.indexOf(b)+1); // make inclusive
+
+        /*
+        from inOrder, get the sub array from Node a to Node b
+        from postOrder, answer is the Node in subArray that appear farthest right
+         */
+
+        Node answer = null;
+        for (Node node : postOrder){
+            if (subset.contains(node)){
+                answer = node;
+            }
+        }
+
+        return answer; // returns null if no answer
+    }
+
+    public int height(Node root){
+        // make containers for left subtree and right subtree heights
+        int leftHeight = 0;
+        int rightHeight = 0;
+
+        if (root.leftChild != null){
+            // if the left child is not null
+            leftHeight = 1 + height(root.leftChild);
+            // add 1 to left height and recall height method on leftChild
+        }
+
+        if (root.rightChild != null){
+            // if right child is not null
+            rightHeight = 1 + height(root.rightChild);
+            // add 1 to right height and recall height on right child
+        }
+        // will return the largest height for both
+
+        return leftHeight > rightHeight ? leftHeight : rightHeight;
+    }
+
+    public void levelTraversal(Node root){
+        java.util.Queue<Node> nodes = new java.util.LinkedList<Node>();
+        // queue is FIFO
+        nodes.add(root);
+        // add the initial root
+
+        while (!nodes.isEmpty()){
+            // while the queue is not empty
+            Node tempNode = nodes.poll();
+            // get first item from queue
+            System.out.print(tempNode + " ");
+            // print it
+
+            if (tempNode.leftChild != null) {
+                // if the left child of root is not empty/null
+                nodes.add(tempNode.leftChild);
+                // add it to thee queue
+            }
+
+            if (tempNode.rightChild != null) {
+                // if the right child of root is not empty/null
+                nodes.add(tempNode.rightChild);
+                // add it to the queue
+            }
+
+            // now repeats since there are two more items in the queue (of the same level)
+            // prints them in order on next
+            // if there is null, nothing happens
+        }
+
+
+    }
+
+
     //
 }

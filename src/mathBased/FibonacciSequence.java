@@ -23,5 +23,24 @@ public class FibonacciSequence {
         }
     }
 
+    public static int recursiveFib(int size){
+        return recursiveFibHelper(size, new int[size + 1]);
+    }
+
+    public static int recursiveFibHelper(int n, int[] memo){
+        if (n == 1 || n == 2){
+            return 1;
+        } else if (n == 0){
+            return 0;
+        } else if (memo[n] == 0){
+            memo[n] = recursiveFibHelper(n-1, memo) + recursiveFibHelper(n-2, memo);
+        }
+        return memo[n];
+    }
+
+    public static void main(String[] args){
+        System.out.println(FibonacciSequence.recursiveFib(3));
+    }
+
 
 }
