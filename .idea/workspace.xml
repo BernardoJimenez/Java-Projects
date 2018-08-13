@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="22de3a2f-8ce3-4751-8b1d-eaf4b3513113" name="Default" comment="" />
+    <list default="true" id="22de3a2f-8ce3-4751-8b1d-eaf4b3513113" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dataStructures/Tree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataStructures/Tree.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,12 +24,25 @@
     <favorites_list name="Java Projects" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="LeaderBoard.java" pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="LeaderBoard.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/generalChallenges/LeaderBoard.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="248">
               <caret line="192" column="39" selection-start-line="192" selection-start-column="39" selection-end-line="192" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Tree.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/dataStructures/Tree.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="148">
+              <caret line="220" column="73" selection-start-line="220" selection-start-column="73" selection-end-line="220" selection-end-column="73" />
+              <folding>
+                <element signature="e#6105#6106#0" expanded="true" />
+                <element signature="e#6188#6189#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -95,7 +111,6 @@
         <option value="$PROJECT_DIR$/src/mathBased/RunningMedian.java" />
         <option value="$PROJECT_DIR$/src/dataStructures/Node.java" />
         <option value="$PROJECT_DIR$/src/dataStructures/Testing.java" />
-        <option value="$PROJECT_DIR$/src/dataStructures/Tree.java" />
         <option value="$PROJECT_DIR$/src/mathBased/FibonacciSequence.java" />
         <option value="$PROJECT_DIR$/src/mathBased/Dynamic.java" />
         <option value="$PROJECT_DIR$/src/mathBased/MaxSubArraySum.java" />
@@ -106,6 +121,7 @@
         <option value="$PROJECT_DIR$/src/generalChallenges/Test.java" />
         <option value="$PROJECT_DIR$/src/mathBased/AddDoubleDigits.java" />
         <option value="$PROJECT_DIR$/src/generalChallenges/LeaderBoard.java" />
+        <option value="$PROJECT_DIR$/src/dataStructures/Tree.java" />
       </list>
     </option>
   </component>
@@ -123,8 +139,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -136,6 +152,12 @@
               <item name="Java-Projects" type="b2602c69:ProjectViewProjectNode" />
               <item name="Java-Projects" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Java-Projects" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java-Projects" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="dataStructures" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Java-Projects" type="b2602c69:ProjectViewProjectNode" />
@@ -153,7 +175,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -343,14 +365,13 @@
     <layout>
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="bottom" id="TODO" order="10" />
-      <window_info anchor="bottom" id="Messages" order="1" weight="0.3288889" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info id="Image Layers" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.50292826" side_tool="true" weight="0.32913387" />
       <window_info anchor="right" id="Maven Projects" order="0" />
-      <window_info anchor="bottom" id="Version Control" order="2" />
       <window_info anchor="bottom" id="Run" order="6" sideWeight="0.49707174" weight="0.22238806" />
+      <window_info anchor="bottom" id="Version Control" order="2" />
       <window_info anchor="bottom" id="Terminal" order="3" />
       <window_info id="Capture Tool" order="0" />
       <window_info id="Designer" order="1" />
@@ -359,11 +380,12 @@
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
+      <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="right" id="Properties" order="2" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="Messages" order="1" weight="0.3288889" />
       <window_info anchor="right" id="Commander" order="6" weight="0.4" />
       <window_info id="Nl-Palette" order="5" />
       <window_info anchor="bottom" id="Message" order="4" />
@@ -429,9 +451,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="57" column="30" selection-start-line="57" selection-start-column="30" selection-end-line="57" selection-end-column="30" />
-          <folding>
-            <element signature="imports" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -579,13 +598,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dataStructures/Tree.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5457">
-          <caret line="326" column="44" selection-start-line="326" selection-start-column="44" selection-end-line="326" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/mathBased/FibonacciSequence.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -681,6 +693,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="248">
           <caret line="192" column="39" selection-start-line="192" selection-start-column="39" selection-end-line="192" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dataStructures/Tree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="220" column="73" selection-start-line="220" selection-start-column="73" selection-end-line="220" selection-end-column="73" />
+          <folding>
+            <element signature="e#6105#6106#0" expanded="true" />
+            <element signature="e#6188#6189#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

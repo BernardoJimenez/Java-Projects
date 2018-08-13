@@ -223,7 +223,7 @@ public class Tree {
     }
 
     public boolean checkIfBST(Node root){
-        return checkIfBSTHelper(root, Integer.MIN_VALUE, Integer.MIN_VALUE);
+        return checkIfBSTHelper(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
     }
 
     private boolean checkIfBSTHelper(Node node, int min, int max){
